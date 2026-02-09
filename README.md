@@ -1,36 +1,55 @@
-# Random Discord Bot (Node.js)
+Slate Discord Bot
 
-A small slash-command bot with a few random commands: `/ping`, `/fortune`, `/8ball`, `/roll`, `/choose`.
+Slate is a Discord moderation and security bot built to protect servers from raids, spam, and destructive actions. It monitors server activity in real time and responds instantly when dangerous behavior is detected.
 
-## Setup
+Core Features
 
-1. Create a Discord application + bot in the Developer Portal.
-2. Copy your bot token and client ID into `.env` (see `.env.example`).
-3. (Optional) Add `DISCORD_GUILD_ID` to register commands instantly while testing.
+Real time raid and nuke protection
+Detection of mass channel deletes, role permission abuse, ban spikes, and join floods
+Automatic lockdown system to stop damage
+Advanced automod for spam, link flooding, mass mentions, and blacklisted words
+Member verification with role gating
+Join screening for low age or suspicious accounts
+Detailed moderation and security logs
+Per server configuration stored in MongoDB
 
-## Install
+Requirements
 
-```bash
-npm install
-```
+Node.js version 18 or newer
+MongoDB Atlas database
+Discord bot application with privileged intents enabled
 
-## Register commands
+Setup Instructions
 
-```bash
-npm run register
-```
+Clone the repository
 
-## Run
+Run npm install
 
-```bash
-npm start
-```
+Create a .env file using the example below
 
-## Notes
+Enable Server Members Intent and Message Content Intent in the Discord Developer Portal
 
-- If you skip `DISCORD_GUILD_ID`, global commands can take a while to appear.
-- Invite URL format (replace CLIENT_ID):
+Start the bot with node index.js
 
-```
-https://discord.com/api/oauth2/authorize?client_id=CLIENT_ID&permissions=0&scope=bot%20applications.commands
-```
+Environment Variables
+
+DISCORD_TOKEN=your bot token
+CLIENT_ID=your application id
+MONGODB_URI=your mongodb connection string
+
+Slash Commands
+
+setup
+lockdown
+backup
+restore
+config
+whitelist
+
+Deployment
+
+Slate can be deployed on Railway, Render, or any VPS. MongoDB Atlas free tier is supported.
+
+License
+
+MIT License
